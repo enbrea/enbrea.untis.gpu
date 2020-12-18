@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>STÜBER SYSTEMS GmbH</Authors>
+    <Company>STÜBER SYSTEMS GmbH</Company>
+    <Copyright>© 2020 STÜBER SYSTEMS GmbH</Copyright>
+    <Product>ENBREA UNTIS.GPU</Product>
+    <Description>Reader class for Untis GPU???.TXT export files</Description>
+    <PackageLicenseUrl></PackageLicenseUrl>
+    <RepositoryType />
+    <NeutralLanguage></NeutralLanguage>
+    <Version>0.1.0</Version>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <RepositoryUrl>https://github.com/stuebersystems/enbrea.untis.gpu</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Enbrea.Csv" Version="0.1.0" />
+  </ItemGroup>
+
+</Project>
