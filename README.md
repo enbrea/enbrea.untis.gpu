@@ -3,7 +3,7 @@
 
 # ENBREA UNTIS.GPU
 
-A high performance .NET Core library for reading DIF files from the timetabling software [Untis](https://www.untis.at/en). Currently supported are:
+A .NET Core library for reading DIF files from the timetabling software [Untis](https://www.untis.at/en). Currently supported are:
 
 + GPU001.TXT = Timetable
 + GPU002.TXT = Lessons
