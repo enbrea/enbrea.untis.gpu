@@ -86,6 +86,7 @@ namespace Enbrea.Untis.Gpu
         /// Lesson id (Unterrichtsnummer)
         /// </summary>
         public uint LessonId { get; set; }
+
         /// <summary>
         /// Remark (Text zur Vertretung)
         /// </summary>
