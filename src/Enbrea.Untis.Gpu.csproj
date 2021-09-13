@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFrameworks>netcoreapp3.1;net5.0</TargetFrameworks>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>STÜBER SYSTEMS GmbH</Authors>
     <Company>STÜBER SYSTEMS GmbH</Company>
@@ -13,7 +13,9 @@
     <NeutralLanguage></NeutralLanguage>
     <Version>0.1.0</Version>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/stuebersystems/enbrea.untis.gpu</RepositoryUrl>
+    <PackageTags>enbrea;untis</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,10 +23,14 @@
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Enbrea.Csv" Version="0.1.0" />
+    <PackageReference Include="Enbrea.Csv" Version="0.2.0" />
   </ItemGroup>
 
 </Project>
