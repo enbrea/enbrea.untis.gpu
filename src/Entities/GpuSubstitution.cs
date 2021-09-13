@@ -36,8 +36,8 @@ namespace Enbrea.Untis.Gpu
             SubjectFlag = values[8];
             StandInSubject = values[9];
             StandInSubjectFlag = values[10];
-            Room = values[11];
-            StandInRoom = values[12];
+            Rooms = MapStringListValue(values[11], '~');
+            StandInRooms = MapStringListValue(values[12], '~');
             SchoolClasses = MapStringListValue(values[14], '~');
             AbsenceReason = values[15];
             Remark = values[16];
@@ -93,22 +93,22 @@ namespace Enbrea.Untis.Gpu
         public string Remark { get; set; }
 
         /// <summary>
-        /// Room (Raum)
+        /// List of room (Räume mit ~ getrennt)
         /// </summary>
-        public string Room { get; set; }
+        public List<string> Rooms { get; set; }
 
         /// <summary>
-        /// List of school classes (Klasse(n) mit ~ getrennt)
+        /// List of school classes (Klassen mit ~ getrennt)
         /// </summary>
         public List<string> SchoolClasses { get; set; }
 
         /// <summary>
-        /// Stand-In room (Vertretungsraum)
+        /// List of stand-in rooms (Vertretungsräume mit ~ getrennt)
         /// </summary>
-        public string StandInRoom { get; set; }
+        public List<string> StandInRooms { get; set; }
 
         /// <summary>
-        /// List of stand-in school classes (Vertretungsklasse(n) mit ~ getrennt)
+        /// List of stand-in school classes (Vertretungsklassen mit ~ getrennt)
         /// </summary>
         public List<string> StandInSchoolClasses { get; set; }
 

@@ -45,8 +45,8 @@ namespace Enbrea.Untis.Gpu.Tests
             Assert.Equal("Ma", enumerator.Current.Subject);
             Assert.Equal("Stü", enumerator.Current.AbsentTeacher);
             Assert.Equal("Zim", enumerator.Current.StandInTeacher);
-            Assert.Equal("R233", enumerator.Current.Room);
-            Assert.Equal("R232", enumerator.Current.StandInRoom);
+            Assert.Equal("R233", enumerator.Current.Rooms[0]);
+            Assert.Equal("R232", enumerator.Current.StandInRooms[0]);
             Assert.Equal("8a", enumerator.Current.SchoolClasses[0]);
             Assert.Equal("8a", enumerator.Current.StandInSchoolClasses[0]);
             Assert.Equal("Krank", enumerator.Current.AbsenceReason);
@@ -62,8 +62,8 @@ namespace Enbrea.Untis.Gpu.Tests
             Assert.Equal("De", enumerator.Current.Subject);
             Assert.Equal("Bol", enumerator.Current.AbsentTeacher);
             Assert.Equal("Kal", enumerator.Current.StandInTeacher);
-            Assert.Equal("R103", enumerator.Current.Room);
-            Assert.Equal("R103", enumerator.Current.StandInRoom);
+            Assert.Equal("R103", enumerator.Current.Rooms[0]);
+            Assert.Equal("R103", enumerator.Current.StandInRooms[0]);
             Assert.Equal("8b", enumerator.Current.SchoolClasses[0]);
             Assert.Equal("8b", enumerator.Current.StandInSchoolClasses[0]);
             Assert.Equal("Krank", enumerator.Current.AbsenceReason);
@@ -79,8 +79,8 @@ namespace Enbrea.Untis.Gpu.Tests
             Assert.Equal("En", enumerator.Current.Subject);
             Assert.Equal("Stü", enumerator.Current.AbsentTeacher);
             Assert.Equal("Kal", enumerator.Current.StandInTeacher);
-            Assert.Equal("SH", enumerator.Current.Room);
-            Assert.Equal("KL6", enumerator.Current.StandInRoom);
+            Assert.Equal("SH", enumerator.Current.Rooms[0]);
+            Assert.Equal("KL6", enumerator.Current.StandInRooms[0]);
             Assert.Equal("2. M1", enumerator.Current.SchoolClasses[0]);
             Assert.Equal("2. M1", enumerator.Current.StandInSchoolClasses[0]);
             Assert.Equal("2. M1+S", enumerator.Current.StandInSchoolClasses[1]);

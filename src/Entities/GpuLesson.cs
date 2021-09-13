@@ -30,10 +30,11 @@ namespace Enbrea.Untis.Gpu
             Class = values[4];
             Teacher = values[5];
             Subject = values[6];
-            Room = values[7];
+            Rooms = MapStringListValue(values[7], '~');
             Group = values[11];
             ValidFrom = MapDateValue(values[14]);
             ValidTo = MapDateValue(values[15]);
+            DefaultRooms = MapStringListValue(values[19], '~');
             Description = values[20];
             ForegroundColor = MapColorValue(values[21]);
             BackgroundColor = MapColorValue(values[22]);
@@ -56,6 +57,11 @@ namespace Enbrea.Untis.Gpu
         public string Code { get; set; }
 
         /// <summary>
+        /// List of default rooms (Stammräume mit ~ getrennt)
+        /// </summary>
+        public List<string> DefaultRooms { get; set; }
+
+        /// <summary>
         /// Description (Beschreibung)
         /// </summary>
         public string Description { get; set; }
@@ -76,9 +82,10 @@ namespace Enbrea.Untis.Gpu
         public uint Id { get; set; }
 
         /// <summary>
-        /// Room (Raum)
+        /// List of rooms (Räume mit ~ getrennt)
         /// </summary>
-        public string Room { get; set; }
+        public List<string> Rooms { get; set; }
+
         /// <summary>
         /// Subject (Fach)
         /// </summary>
