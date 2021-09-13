@@ -86,6 +86,18 @@ steps:
     packagesToPush: '$(Build.Repository.LocalPath)/**/*.nupkg;!$(Build.Repository.LocalPath)/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
     publishVstsFeed: 'b0890edd-bcca-4a1c-b63c-d22daf6e4407/24f47e68-5eca-4ba8-8ab3-905662347d75'
+- task: PowerShell@2
+  displayName: 'Push to GitHub'
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))
+  inputs:
+    targetType: 'inline'
+    script: |
+      git remote add github https://$(PAT)@github.com/stuebersystems/enbrea.untis.gpu.git
+      git fetch github
+      git checkout .
+      git push github HEAD:main
+      git push --tags github HEAD:main
+    pwsh: true
 - task: NuGetCommand@2
   displayName: 'Publish to nuget.org'
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'))

@@ -3,23 +3,25 @@
 
 # ENBREA UNTIS.GPU
 
-A .NET Core library for reading DIF files from the timetabling software [Untis](https://www.untis.at/en). Currently supported are:
+A .NET library for reading DIF files from the timetabling software [Untis](https://www.untis.at/en). 
 
-+ GPU001.TXT = Timetable
-+ GPU002.TXT = Lessons
-+ GPU003.TXT = Classes
-+ GPU004.TXT = Teachers
-+ GPU005.TXT = Rooms
-+ GPU006.TXT = Subjects
-+ GPU007.TXT = Departments
-+ GPU009.TXT = Supervisions
-+ GPU010.TXT = Students
-+ GPU011.TXT = LessonTables
-+ GPU012.TXT = AbsenceReasons
-+ GPU013.TXT = Absences
-+ GPU014.TXT = Substitutions
-+ GPU017.TXT = Exams
-+ GPU018.TXT = Holidays
++ Supports .NET Core 3.1 and .NET 5
++ Supports the following DIF files:
+  + GPU001.TXT = Timetable
+  + GPU002.TXT = Lessons
+  + GPU003.TXT = Classes
+  + GPU004.TXT = Teachers
+  + GPU005.TXT = Rooms
+  + GPU006.TXT = Subjects
+  + GPU007.TXT = Departments
+  + GPU009.TXT = Supervisions
+  + GPU010.TXT = Students
+  + GPU011.TXT = LessonTables
+  + GPU012.TXT = AbsenceReasons
+  + GPU013.TXT = Absences
+  + GPU014.TXT = Substitutions
+  + GPU017.TXT = Exams
+  + GPU018.TXT = Holidays
 
 ## Installation
 
