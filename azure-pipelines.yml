@@ -3,6 +3,7 @@ pool:
 
 variables:
 - group: 'nuget-package-config'
+- group: 'github-config'
 
 steps:
 - checkout: self
