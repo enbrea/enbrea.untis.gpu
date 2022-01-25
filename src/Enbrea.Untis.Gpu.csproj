@@ -5,7 +5,7 @@
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <Authors>STÜBER SYSTEMS GmbH</Authors>
     <Company>STÜBER SYSTEMS GmbH</Company>
-    <Copyright>© 2021 STÜBER SYSTEMS GmbH</Copyright>
+    <Copyright>© 2022 STÜBER SYSTEMS GmbH</Copyright>
     <Product>ENBREA UNTIS.GPU</Product>
     <Description>Reader class for Untis GPU???.TXT export files</Description>
     <PackageLicenseUrl></PackageLicenseUrl>
@@ -30,7 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Enbrea.Csv" Version="0.2.0" />
+    <PackageReference Include="Enbrea.Csv" Version="0.3.1" />
   </ItemGroup>
 
 </Project>
