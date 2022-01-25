@@ -1,8 +1,8 @@
-﻿#region ENBREA UNTIS.GPU - Copyright (C) 2021 STÜBER SYSTEMS GmbH
+﻿#region ENBREA UNTIS.GPU - Copyright (C) 2022 STÜBER SYSTEMS GmbH
 /*    
  *    ENBREA UNTIS.GPU 
  *    
- *    Copyright (C) 2021 STÜBER SYSTEMS GmbH
+ *    Copyright (C) 2022 STÜBER SYSTEMS GmbH
  *
  *    Licensed under the MIT License, Version 2.0. 
  * 
@@ -19,7 +19,7 @@ namespace Enbrea.Untis.Gpu
     public class GpuAbsenceReason : GpuRecord
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GpuAbsenceReason<T>"/> class.
+        /// Initializes a new instance of the <see cref="GpuAbsenceReason"/> class.
         /// </summary>
         /// <param name="values">List of raw values</param>
         public GpuAbsenceReason(List<string> values)

@@ -1,8 +1,8 @@
-﻿#region ENBREA UNTIS.GPU - Copyright (C) 2021 STÜBER SYSTEMS GmbH
+﻿#region ENBREA UNTIS.GPU - Copyright (C) 2022 STÜBER SYSTEMS GmbH
 /*    
  *    ENBREA UNTIS.GPU 
  *    
- *    Copyright (C) 2021 STÜBER SYSTEMS GmbH
+ *    Copyright (C) 2022 STÜBER SYSTEMS GmbH
  *
  *    Licensed under the MIT License, Version 2.0. 
  * 
@@ -20,7 +20,7 @@ namespace Enbrea.Untis.Gpu
     public class GpuStudent : GpuRecord
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GpuStudent<T>"/> class.
+        /// Initializes a new instance of the <see cref="GpuStudent"/> class.
         /// </summary>
         /// <param name="values">List of raw values</param>
         public GpuStudent(List<string> values)
@@ -85,6 +85,7 @@ namespace Enbrea.Untis.Gpu
         /// Long name (Langname)
         /// </summary>
         public string LastName { get; set; }
+
         /// <summary>
         /// Name
         /// </summary>

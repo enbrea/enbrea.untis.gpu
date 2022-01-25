@@ -1,8 +1,8 @@
-﻿#region ENBREA UNTIS.GPU - Copyright (C) 2021 STÜBER SYSTEMS GmbH
+﻿#region ENBREA UNTIS.GPU - Copyright (C) 2022 STÜBER SYSTEMS GmbH
 /*    
  *    ENBREA UNTIS.GPU 
  *    
- *    Copyright (C) 2021 STÜBER SYSTEMS GmbH
+ *    Copyright (C) 2022 STÜBER SYSTEMS GmbH
  *
  *    Licensed under the MIT License, Version 2.0. 
  * 
@@ -19,7 +19,7 @@ namespace Enbrea.Untis.Gpu
     public class GpuDepartment : GpuRecord
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GpuDepartment<T>"/> class.
+        /// Initializes a new instance of the <see cref="GpuDepartment"/> class.
         /// </summary>
         /// <param name="values">List of raw values</param>
         public GpuDepartment(List<string> values)
