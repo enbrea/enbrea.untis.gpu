@@ -19,7 +19,7 @@ namespace Enbrea.Untis.Gpu
     public class GpuDepartment : GpuRecord
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GpuDepartment<T>"/> class.
+        /// Initializes a new instance of the <see cref="GpuDepartment"/> class.
         /// </summary>
         /// <param name="values">List of raw values</param>
         public GpuDepartment(List<string> values)

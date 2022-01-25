@@ -20,7 +20,7 @@ namespace Enbrea.Untis.Gpu
     public class GpuSubstitution : GpuRecord
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GpuSubstitution<T>"/> class.
+        /// Initializes a new instance of the <see cref="GpuSubstitution"/> class.
         /// </summary>
         /// <param name="values">List of raw values</param>
         public GpuSubstitution(List<string> values)

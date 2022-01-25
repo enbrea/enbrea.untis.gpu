@@ -19,7 +19,7 @@ namespace Enbrea.Untis.Gpu
     public class GpuAbsenceReason : GpuRecord
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GpuAbsenceReason<T>"/> class.
+        /// Initializes a new instance of the <see cref="GpuAbsenceReason"/> class.
         /// </summary>
         /// <param name="values">List of raw values</param>
         public GpuAbsenceReason(List<string> values)

@@ -20,7 +20,7 @@ namespace Enbrea.Untis.Gpu
     public class GpuStudent : GpuRecord
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GpuStudent<T>"/> class.
+        /// Initializes a new instance of the <see cref="GpuStudent"/> class.
         /// </summary>
         /// <param name="values">List of raw values</param>
         public GpuStudent(List<string> values)
@@ -85,6 +85,7 @@ namespace Enbrea.Untis.Gpu
         /// Long name (Langname)
         /// </summary>
         public string LastName { get; set; }
+
         /// <summary>
         /// Name
         /// </summary>

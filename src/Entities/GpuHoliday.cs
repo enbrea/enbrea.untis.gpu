@@ -20,7 +20,7 @@ namespace Enbrea.Untis.Gpu
     public class GpuHoliday : GpuRecord
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GpuHoliday<T>"/> class.
+        /// Initializes a new instance of the <see cref="GpuHoliday"/> class.
         /// </summary>
         /// <param name="values">List of raw values</param>
         public GpuHoliday(List<string> values)
