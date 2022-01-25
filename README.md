@@ -20,6 +20,7 @@ A .NET library for reading DIF files from the timetabling software [Untis](https
   + GPU012.TXT = AbsenceReasons
   + GPU013.TXT = Absences
   + GPU014.TXT = Substitutions
+  + GPU015.TXT = Student Course Choices
   + GPU017.TXT = Exams
   + GPU018.TXT = Holidays
 
