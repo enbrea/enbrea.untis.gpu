@@ -58,7 +58,7 @@ namespace Enbrea.Untis.Gpu
             }
         }
 
-        protected DateTime? MapDateValue(string value)
+        protected DateOnly? MapDateValue(string value)
         {
             if (string.IsNullOrEmpty(value))
             {
@@ -66,7 +66,7 @@ namespace Enbrea.Untis.Gpu
             }
             else
             {
-                return DateTime.ParseExact(value, "yyyyMMdd", CultureInfo.InvariantCulture);
+                return DateOnly.ParseExact(value, "yyyyMMdd", CultureInfo.InvariantCulture);
             }
         }
 

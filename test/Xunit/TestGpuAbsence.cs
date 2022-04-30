@@ -12,6 +12,7 @@
 using Enbrea.Csv;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -28,8 +29,9 @@ namespace Enbrea.Untis.Gpu.Tests
             var textLine =
                 "9,\"L\",\"SchFr\",\"20080908\",\"20080908\",\"1\",\"13\",\"011\",\"Seminar\",";
 
-            using var csvReader = new CsvReader(textLine);
-            csvReader.Configuration.Separator = ',';
+            using var strReader = new StringReader(textLine);
+
+            var csvReader = new CsvReader(strReader, new CsvConfiguration { Separator = ',' });
 
             var gpuReader = new GpuReader<GpuAbsence>(csvReader);
 
@@ -39,8 +41,8 @@ namespace Enbrea.Untis.Gpu.Tests
             Assert.Equal((uint)9, enumerator.Current.Id);
             Assert.Equal(GpuAbsenceType.Teacher, enumerator.Current.Type.Value);
             Assert.Equal("SchFr", enumerator.Current.ShortName);
-            Assert.Equal(new DateTime(2008, 9, 8), enumerator.Current.StartDate.Value);
-            Assert.Equal(new DateTime(2008, 9, 8), enumerator.Current.EndDate.Value);
+            Assert.Equal(new DateOnly(2008, 9, 8), enumerator.Current.StartDate.Value);
+            Assert.Equal(new DateOnly(2008, 9, 8), enumerator.Current.EndDate.Value);
             Assert.Equal((uint)1, enumerator.Current.FirstTimeSlot.Value);
             Assert.Equal((uint)13, enumerator.Current.LastTimeSlot.Value);
             Assert.Equal("011", enumerator.Current.Reason);

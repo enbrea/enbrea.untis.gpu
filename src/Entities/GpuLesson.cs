@@ -99,11 +99,11 @@ namespace Enbrea.Untis.Gpu
         /// <summary>
         /// Valid to (Datum von)
         /// </summary>
-        public DateTime? ValidFrom { get; set; }
+        public DateOnly? ValidFrom { get; set; }
 
         /// <summary>
         /// Valid from (Datum bis)
         /// </summary>
-        public DateTime? ValidTo { get; set; }
+        public DateOnly? ValidTo { get; set; }
    }
 }

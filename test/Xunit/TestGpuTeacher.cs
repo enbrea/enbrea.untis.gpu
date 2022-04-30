@@ -11,6 +11,7 @@
 
 using Enbrea.Csv;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -27,8 +28,9 @@ namespace Enbrea.Untis.Gpu.Tests
             var textLine =
                 "\"BraFe\",\"Braun\",\"5\",,,\"mn\",,,10,,3,,,,23.000,6.86570,\"Fachgruppe Maler\",\"1000\",,,\"1p\",,,,,,,\"1.00000\",\"Ferdinand\",,\"2\",,,0,,,,,,,,,,,";
 
-            using var csvReader = new CsvReader(textLine);
-            csvReader.Configuration.Separator = ',';
+            using var strReader = new StringReader(textLine);
+
+            var csvReader = new CsvReader(strReader, new CsvConfiguration { Separator = ',' });
 
             var gpuReader = new GpuReader<GpuTeacher>(csvReader);
 

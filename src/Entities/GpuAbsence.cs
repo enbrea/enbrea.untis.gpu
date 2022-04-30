@@ -39,7 +39,7 @@ namespace Enbrea.Untis.Gpu
         /// <summary>
         /// Valid from (Enddatum)
         /// </summary>
-        public DateTime? EndDate { get; set; }
+        public DateOnly? EndDate { get; set; }
 
         /// <summary>
         /// Text (Absenztext)
@@ -69,7 +69,7 @@ namespace Enbrea.Untis.Gpu
         /// <summary>
         /// Valid to (Beginndatum)
         /// </summary>
-        public DateTime? StartDate { get; set; }
+        public DateOnly? StartDate { get; set; }
 
         /// <summary>
         /// Text (Absenztext)
@@ -77,7 +77,7 @@ namespace Enbrea.Untis.Gpu
         public string Text { get; set; }
 
         /// <summary>
-        /// Code (Kennzeichen)
+        /// Type (Elementart)
         /// </summary>
         public GpuAbsenceType? Type { get; set; }
     }

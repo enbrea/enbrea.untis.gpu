@@ -12,6 +12,7 @@
 using Enbrea.Csv;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -30,8 +31,9 @@ namespace Enbrea.Untis.Gpu.Tests
                 "\"ÖnüA~QuiJ~RitT~SchA1~SieC~SzaA~TalC~AltH~BraN~KinC~HeinM~GibK~SchüT~MeyK~BadJ~BodeL~HerJ~JäcJ~ElS~NolF~PöhlC~RamJ~SchäM~SchJ1~SchJ2~SchwK~SpoC~WitF~ApfJ~FeiF~KleL~HelbS~GrüM~KaiN~KeßF~DesD~HermM~BecS~BecT~HagM~GerJ~PhilA~RadS~SchK~SejA~SimL~AltS~BodeF~KläJ~MicM~LeicS~MatK~JekS~MetK~BeckS~DegC~BerC~DecL~KuhnJ~StöN~WerL~HöhN~OldD~RogJ~SchnF~SchuC~WebL~WenM~WeyY~WieJ~AdlD~KorC~FriC~ChaR~MetE~HerL~RotT~BötL~MetM~HerD~PauD~LöfY~HehD~PanJ~PörtJ~SchC~SchrC~ThoT~UweF~WeiL~AydP~KohnA~JanS~LohL~BalM~BirA~StrJ~BroD~HahT~GörN~PavM~RotD~SchC2~SchF1~StoA~VriK~WeiD~WörJ~KutA~BreA~KerO~BagN~MettM~AuhB\"," +
                 "\"BölHe - BölHe~Da Le\",\"- R 6f\"";
 
-            using var csvReader = new CsvReader(textLine);
-            csvReader.Configuration.Separator = ',';
+            using var strReader = new StringReader(textLine);
+
+            var csvReader = new CsvReader(strReader, new CsvConfiguration { Separator = ',' });
 
             var gpuReader = new GpuReader<GpuExam>(csvReader);
 
@@ -41,7 +43,7 @@ namespace Enbrea.Untis.Gpu.Tests
             Assert.Equal("121", enumerator.Current.Name);
             Assert.Equal((uint)30, enumerator.Current.Id);
             Assert.Equal("L", enumerator.Current.Text);
-            Assert.Equal(new DateTime(2009, 9, 29), enumerator.Current.Date.Value);
+            Assert.Equal(new DateOnly(2009, 9, 29), enumerator.Current.Date.Value);
             Assert.Equal((uint)3, enumerator.Current.StartTimeSlot.Value);
             Assert.Equal((uint)4, enumerator.Current.EndTimeSlot.Value);
             Assert.Equal("E  L2", enumerator.Current.Subjects[0]);

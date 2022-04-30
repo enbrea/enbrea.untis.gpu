@@ -12,6 +12,7 @@
 using Enbrea.Csv;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -28,8 +29,9 @@ namespace Enbrea.Untis.Gpu.Tests
             var textLine =
                 "\"AckeT\",\"Ackermann\",,,,,\"W\",\"Theresa\",\"10021\",\"12\",\"1\",,\"19911106\",\"AckeT@beispiel.de\",";
 
-            using var csvReader = new CsvReader(textLine);
-            csvReader.Configuration.Separator = ',';
+            using var strReader = new StringReader(textLine);
+
+            var csvReader = new CsvReader(strReader, new CsvConfiguration { Separator = ',' });
 
             var gpuReader = new GpuReader<GpuStudent>(csvReader);
 
@@ -43,7 +45,7 @@ namespace Enbrea.Untis.Gpu.Tests
             Assert.Equal("10021", enumerator.Current.StudentNo);
             Assert.Equal("12", enumerator.Current.Class);
             Assert.Equal(GpuGender.Female, enumerator.Current.Gender);
-            Assert.Equal(new DateTime(1991, 11, 6, 0, 0, 0), enumerator.Current.Birthdate);
+            Assert.Equal(new DateOnly(1991, 11, 6), enumerator.Current.Birthdate);
             Assert.Equal("AckeT@beispiel.de", enumerator.Current.Email);
 
             Assert.False(await enumerator.MoveNextAsync());

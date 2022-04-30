@@ -35,7 +35,7 @@ namespace Enbrea.Untis.Gpu
         /// <summary>
         /// From date (Datum von)
         /// </summary>
-        public DateTime From { get; set; }
+        public DateOnly From { get; set; }
 
         /// <summary>
         /// Long name (Langname der Ferien)
@@ -55,6 +55,6 @@ namespace Enbrea.Untis.Gpu
         /// <summary>
         /// To date (Datum bis)
         /// </summary>
-        public DateTime To { get; set; }
+        public DateOnly To { get; set; }
    }
 }

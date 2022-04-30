@@ -11,6 +11,7 @@
 
 using Enbrea.Csv;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -24,11 +25,12 @@ namespace Enbrea.Untis.Gpu.Tests
         [Fact]
         public async Task TestFilledLine()
         {
-            var textLines =
+            var textLine =
                 "\"Fachgruppe für Bodenleger\",,";
 
-            using var csvReader = new CsvReader(textLines);
-            csvReader.Configuration.Separator = ',';
+            using var strReader = new StringReader(textLine);
+
+            var csvReader = new CsvReader(strReader, new CsvConfiguration { Separator = ',' });
 
             var gpuReader = new GpuReader<GpuDepartment>(csvReader);
 
