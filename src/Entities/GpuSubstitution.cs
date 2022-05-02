@@ -65,7 +65,7 @@ namespace Enbrea.Untis.Gpu
         /// <summary>
         /// Date (Datum)
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
 
         /// <summary>
         /// Flags (Art)

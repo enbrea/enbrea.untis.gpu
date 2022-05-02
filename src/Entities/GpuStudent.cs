@@ -44,7 +44,7 @@ namespace Enbrea.Untis.Gpu
         /// <summary>
         /// Birthdate (Geburtsdatum)
         /// </summary>
-        public DateTime? Birthdate { get; set; }
+        public DateOnly? Birthdate { get; set; }
 
         /// <summary>
         /// Short name (Name)

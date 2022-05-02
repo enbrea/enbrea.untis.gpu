@@ -12,6 +12,7 @@
 using Enbrea.Csv;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -30,8 +31,9 @@ namespace Enbrea.Untis.Gpu.Tests
                 "13,\"20190807\",3,3,269,\"Bol\",\"Kal\",\"De\",,,,\"R103\",\"R103\",,\"8b\",\"Krank\",,0,\"8b\",,201908011452,\" + ~-\"" + Environment.NewLine +
                 "14,\"20190807\",1,,3922,\"Stü\",\"Kal\",\"En\",,,,\"SH\",\"KL6\",,\"2. M1~2. M1+S~2. M2\",,\"Urlaub\",2,\"2. M1~2. M1+S~2. M2\", S,201908011452,\" -\"";
 
-            using var csvReader = new CsvReader(textLines);
-            csvReader.Configuration.Separator = ',';
+            using var strReader = new StringReader(textLines);
+
+            var csvReader = new CsvReader(strReader, new CsvConfiguration { Separator = ',' });
 
             var gpuReader = new GpuReader<GpuSubstitution>(csvReader);
 
@@ -39,7 +41,7 @@ namespace Enbrea.Untis.Gpu.Tests
 
             Assert.True(await enumerator.MoveNextAsync());
             Assert.Equal((uint)12, enumerator.Current.Id);
-            Assert.Equal(new DateTime(2019, 8, 7, 0, 0, 0), enumerator.Current.Date);
+            Assert.Equal(new DateOnly(2019, 8, 7), enumerator.Current.Date);
             Assert.Equal((uint)2, enumerator.Current.TimeSlot);
             Assert.Equal((uint)124, enumerator.Current.LessonId);
             Assert.Equal("Ma", enumerator.Current.Subject);
@@ -56,7 +58,7 @@ namespace Enbrea.Untis.Gpu.Tests
 
             Assert.True(await enumerator.MoveNextAsync());
             Assert.Equal((uint)13, enumerator.Current.Id);
-            Assert.Equal(new DateTime(2019, 8, 7, 0, 0, 0), enumerator.Current.Date);
+            Assert.Equal(new DateOnly(2019, 8, 7), enumerator.Current.Date);
             Assert.Equal((uint)3, enumerator.Current.TimeSlot);
             Assert.Equal((uint)269, enumerator.Current.LessonId);
             Assert.Equal("De", enumerator.Current.Subject);
@@ -73,7 +75,7 @@ namespace Enbrea.Untis.Gpu.Tests
 
             Assert.True(await enumerator.MoveNextAsync());
             Assert.Equal((uint)14, enumerator.Current.Id);
-            Assert.Equal(new DateTime(2019, 8, 7, 0, 0, 0), enumerator.Current.Date);
+            Assert.Equal(new DateOnly(2019, 8, 7), enumerator.Current.Date);
             Assert.Equal((uint)1, enumerator.Current.TimeSlot);
             Assert.Equal((uint)3922, enumerator.Current.LessonId);
             Assert.Equal("En", enumerator.Current.Subject);

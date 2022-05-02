@@ -12,6 +12,7 @@
 using Enbrea.Csv;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -29,8 +30,9 @@ namespace Enbrea.Untis.Gpu.Tests
                 "\"Weihnachten\",\"Weihnachtsferien\",20091224,20100106," + Environment.NewLine +
                 "\"Allerheiligen\",\"Allerheiligen\",20091101,20091101,\"F\"";
 
-            using var csvReader = new CsvReader(textLines);
-            csvReader.Configuration.Separator = ',';
+            using var strReader = new StringReader(textLines);
+
+            var csvReader = new CsvReader(strReader, new CsvConfiguration { Separator = ',' });
 
             var gpuReader = new GpuReader<GpuHoliday>(csvReader);
 
@@ -39,15 +41,15 @@ namespace Enbrea.Untis.Gpu.Tests
             Assert.True(await enumerator.MoveNextAsync());
             Assert.Equal("Weihnachten", enumerator.Current.ShortName);
             Assert.Equal("Weihnachtsferien", enumerator.Current.LongName);
-            Assert.Equal(new DateTime(2009, 12, 24), enumerator.Current.From);
-            Assert.Equal(new DateTime(2010, 1, 6), enumerator.Current.To);
+            Assert.Equal(new DateOnly(2009, 12, 24), enumerator.Current.From);
+            Assert.Equal(new DateOnly(2010, 1, 6), enumerator.Current.To);
             Assert.False(enumerator.Current.PublicHoliday);
 
             Assert.True(await enumerator.MoveNextAsync());
             Assert.Equal("Allerheiligen", enumerator.Current.ShortName);
             Assert.Equal("Allerheiligen", enumerator.Current.LongName);
-            Assert.Equal(new DateTime(2009, 11, 1), enumerator.Current.From);
-            Assert.Equal(new DateTime(2009, 11, 1), enumerator.Current.To);
+            Assert.Equal(new DateOnly(2009, 11, 1), enumerator.Current.From);
+            Assert.Equal(new DateOnly(2009, 11, 1), enumerator.Current.To);
             Assert.True(enumerator.Current.PublicHoliday);
 
             Assert.False(await enumerator.MoveNextAsync());

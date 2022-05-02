@@ -81,11 +81,11 @@ namespace Enbrea.Untis.Gpu
         /// <summary>
         /// Valid to (Unterrichtsbeginn)
         /// </summary>
-        public DateTime? ValidFrom { get; set; }
+        public DateOnly? ValidFrom { get; set; }
 
         /// <summary>
         /// Valid from (Unterrichtsende)
         /// </summary>
-        public DateTime? ValidTo { get; set; }
+        public DateOnly? ValidTo { get; set; }
     }
 }
