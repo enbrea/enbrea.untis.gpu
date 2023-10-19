@@ -1,8 +1,8 @@
-﻿#region ENBREA UNTIS.GPU - Copyright (C) 2022 STÜBER SYSTEMS GmbH
-/*    Copyright (C) 2022 STÜBER SYSTEMS GmbH
+﻿#region ENBREA UNTIS.GPU - Copyright (C) 2023 STÜBER SYSTEMS GmbH
+/*    Copyright (C) 2023 STÜBER SYSTEMS GmbH
  *    ENBREA UNTIS.GPU 
  *    
- *    Copyright (C) 2022 STÜBER SYSTEMS GmbH
+ *    Copyright (C) 2023 STÜBER SYSTEMS GmbH
  *
  *    Licensed under the MIT License, Version 2.0. 
  * 
@@ -157,7 +157,7 @@ namespace Enbrea.Untis.Gpu
             if (!string.IsNullOrEmpty(value))
             {
                 var csvLineReader = new CsvLineParser(separator);
-                csvLineReader.Read(value, list);
+                csvLineReader.Parse(value, list);
             }
             return list;
         }
