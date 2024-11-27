@@ -5,7 +5,7 @@
 
 A .NET library for reading DIF files from the timetabling software [Untis](https://www.untis.at/en). 
 
-+ Supports .NET 6, .NET 7 and .NET 8
++ Supports .NET 6, .NET 8 and .NET 9
 + Supports the following DIF files:
   + GPU001.TXT = Timetable
   + GPU002.TXT = Lessons

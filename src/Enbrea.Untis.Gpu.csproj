@@ -1,17 +1,17 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+		<TargetFrameworks>net6.0;net8.0;net9.0</TargetFrameworks>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<Authors>STÜBER SYSTEMS GmbH</Authors>
 		<Company>STÜBER SYSTEMS GmbH</Company>
-		<Copyright>© 2023 STÜBER SYSTEMS GmbH</Copyright>
+		<Copyright>© 2024 STÜBER SYSTEMS GmbH</Copyright>
 		<Product>ENBREA UNTIS.GPU</Product>
 		<Description>Reader class for Untis GPU???.TXT export files</Description>
 		<PackageLicenseUrl></PackageLicenseUrl>
 		<RepositoryType />
 		<NeutralLanguage></NeutralLanguage>
-		<Version>0.9.0</Version>
+		<Version>0.10.0</Version>
 		<PackageLicenseFile>LICENSE</PackageLicenseFile>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/enbrea/enbrea.untis.gpu</RepositoryUrl>
@@ -30,7 +30,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Enbrea.Csv" Version="0.9.9" />
+		<PackageReference Include="Enbrea.Csv" Version="0.11.0" />
 	</ItemGroup>
 
 </Project>
